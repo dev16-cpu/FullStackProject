@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <p class="muted">Jinja demonstration</p>
+    <h1>Student List</h1>
+    <p>The original student-list example is now available from the deployable root application.</p>
+    <a class="btn secondary" href="{{ url_for('home') }}">Back home</a>
+</section>
+
+<section class="message-panel">
+    <ul class="student-list">
+        {% for student in students %}
+            <li>{{ student }}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

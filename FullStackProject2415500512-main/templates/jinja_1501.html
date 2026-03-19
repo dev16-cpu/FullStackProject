@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+.list {
+	color:red;
+	background-color:green;
+}
+
+body {
+	text-align:center
+}
+
+#header{
+	color:green
+}
+
+label {
+	font-size:20px;
+	color:#ff5733;
+}
+
+</style>
+</head>
+<body>
+<h1 id="header">welcome to HTML through flask</h1>
+<label>List of students:</label>
+{% for item in los %}
+<br>
+<span class="list">{{item}}</span>
+{%endfor%}
+</body>
+</html>

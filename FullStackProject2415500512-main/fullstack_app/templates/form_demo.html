@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <p class="muted">Form validation example</p>
+    <h1>Validated Registration Form</h1>
+    <p>Server-side checks are preserved, but the page is now deploy-safe and uses relative form actions.</p>
+</section>
+
+<section class="form-shell">
+    {% if errors %}
+        <ul class="error-list">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('form_demo') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" value="{{ submitted_name or '' }}" required>
+        </div>
+        <div>
+            <label for="mobile">Mobile</label>
+            <input id="mobile" name="mobile" type="tel" inputmode="numeric" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <p class="footer-note">Validation rules: name 5+ chars, mobile 10 digits, password 8+ chars.</p>
+</section>
+{% endblock %}

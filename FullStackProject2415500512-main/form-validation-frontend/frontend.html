@@ -1,0 +1,34 @@
+<html>
+<head>
+<style>
+body{
+	text-align:center
+}
+</style>
+</head>
+<body>
+Name
+<br>
+<input type="text" id="name" name="name"><br>
+Mobile<br>
+<input type="text" id="mobile" name="mobile"><br>
+Password<br>
+<input type="password" id="pass" name="pass"><br>
+<button onClick="validation()">Register</button>
+<script>
+function validation() {
+	let name = document.getElementById("name").value
+	if(name==="")
+	alert("Name is required...")
+
+	let len = document.getElementById("mobile").value
+	if(len.length != 10)
+	alert("Mobile should of length of 10")
+
+	let pass = document.getElementById("pass").value
+	if(pass.length < 5)
+	alert("Password should be more than 4 char")
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+body{
+	text-align:center
+}
+</style>
+</head>
+<body>
+<h1>Singup Page</h1>
+<form onsubmit="return validation()" action="file:///C:/Users/sanji/gla-flask/B2/frontend/login.html" method="POST">
+Name
+<br>
+<input type="text" id="name" name="name"><br>
+Mobile<br>
+<input type="text" id="mobile" name="mobile"><br>
+Password<br>
+<input type="password" id="pass" name="pass"><br>
+<input type="submit" value="submit">
+</form>
+<script>
+function validation() {
+	let isValid = true
+	let name = document.getElementById("name").value
+
+	if(name==="") {
+	alert("Name is required...")
+	isValid = false
+	}
+
+	let len = document.getElementById("mobile").value
+	if(len.length != 10) {
+	alert("Mobile should of length of 10")
+	isValid = false
+
+	}
+
+	let pass = document.getElementById("pass").value
+	if(pass.length < 5) {
+	alert("Password should be more than 4 char")
+	isValid = false
+	}
+
+	return isValid
+
+}
+</script>
+</body>
+</html>

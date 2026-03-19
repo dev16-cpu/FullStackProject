@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <p class="muted">500 — Internal Server Error</p>
+    <h1>Something went wrong.</h1>
+    <p>An unexpected error occurred. Please try again later.</p>
+    <nav class="nav">
+        <a class="btn" href="{{ url_for('home') }}">Back to home</a>
+    </nav>
+</section>
+{% endblock %}

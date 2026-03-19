@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <p class="muted">404 — Not Found</p>
+    <h1>Page not found.</h1>
+    <p>The page you requested does not exist or has been moved.</p>
+    <nav class="nav">
+        <a class="btn" href="{{ url_for('home') }}">Back to home</a>
+    </nav>
+</section>
+{% endblock %}
